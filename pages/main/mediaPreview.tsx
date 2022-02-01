@@ -62,19 +62,20 @@ function mediaPreview() {
               imagePath.map((image: any, index: number) => {
                 return (
                   <div className={styles.masonryImage} key={index}>
-                    <Image
+                    <img
                       src={
                         image?.mediaFile?.mimetype.includes("image") &&
                         `${process.env.NEXT_PUBLIC_MEDIA_API_URL}/uploads/?key=${image?.mediaFile?.key}&height=auto&width=200&fit=contain`
                       }
-                      quality={100}
+                    //   quality={100}
                       alt="media"
-                      loading="lazy"
-                    //   layout="fill"
-                      height={"100%"}
+                    //   loading="lazy"
+                    //   layout="responsive"
+                    //   sizes="100"
+                      height={'100%'}
                       width={'100%'}
-                      placeholder="blur"
-                      blurDataURL="/DefaultAlbum.svg"
+                    //   placeholder="blur"
+                    //   blurDataURL="/DefaultAlbum.svg"
                     />
                   </div>
                 );
