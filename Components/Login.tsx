@@ -33,6 +33,7 @@ export default function Login() {
 			console.log(data)
 			localStorage.setItem('token', data.token)
 			localStorage.setItem('user', JSON.stringify(data.result))
+			// console.log(JSON.parse(localStorage.getItem('user')))
 			router.push('/main/album')
 		}).catch(err => {
 			console.log(err)
@@ -42,6 +43,7 @@ export default function Login() {
 	const style = {
 		container: `min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8`
 	}
+	
 
 	return (
 		<>
