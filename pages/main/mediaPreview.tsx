@@ -5,6 +5,7 @@ import styles from "../../styles/media.module.css";
 
 function mediaPreview() {
   const getQueryStringValue = (key: string) => {
+    if (typeof window !== "undefined") {
     return decodeURIComponent(
       window.location.search.replace(
         new RegExp(
@@ -15,7 +16,7 @@ function mediaPreview() {
         ),
         "$1"
       )
-    );
+    )}
   };
   const albumId = getQueryStringValue("albumId");
   const MATCH_URL_IMAGE = /\/(jpg|jpeg|png)($|\?)/i;
@@ -66,9 +67,12 @@ function mediaPreview() {
                         image?.mediaFile?.mimetype.includes("image") &&
                         `${process.env.NEXT_PUBLIC_MEDIA_API_URL}/uploads/?key=${image?.mediaFile?.key}&height=auto&width=200&fit=contain`
                       }
+                      quality={100}
                       alt="media"
                       loading="lazy"
-                      layout="fill"
+                    //   layout="fill"
+                      height={"100%"}
+                      width={'100%'}
                       placeholder="blur"
                       blurDataURL="/DefaultAlbum.svg"
                     />
