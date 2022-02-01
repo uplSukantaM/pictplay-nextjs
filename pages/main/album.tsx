@@ -16,7 +16,13 @@ export default function Example() {
   useEffect(() => {
     getAlbumList();
   }, [userDetails]);
-
+  const returnCount = (data: any) => {
+    let count = 0
+    if (data?.imageCount || data?.videoCount) {
+      count = data?.imageCount + data?.videoCount
+    }
+    return count
+  }
 
   const getAlbumList = () => {
 
@@ -63,19 +69,16 @@ export default function Example() {
                       src={`${process.env.NEXT_PUBLIC_MEDIA_API_URL}/uploads/?key=${item?.thumbnail?.key}&width=300&fit=cover`}
                       layout="fill"
                       quality={100}
-                      placeholder={"blur"}
+                      placeholder="blur"
                       blurDataURL="/DefaultAlbum.svg"
                       loading="lazy"
                     />
                   </a>
                   <div className="mt-4">
-                    <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                      CATEGORY
-                    </h3>
                     <h2 className="text-gray-900 title-font text-lg font-medium">
                       {item?.name}
                     </h2>
-                    <p className="mt-1">$16.00</p>
+                    <p className="mt-1">{returnCount(item)} items</p>
                   </div>
                 </div>
               )
