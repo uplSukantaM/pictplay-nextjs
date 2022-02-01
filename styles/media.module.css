@@ -1,0 +1,49 @@
+.masonryImage {
+	margin: 6.5px;
+	position: relative;
+	/* min-height: 50%; */
+}
+.cancelButton {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+}
+
+.displayImage {
+	padding: 5px 5px;
+}
+
+.CloseBtn {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	cursor: pointer;
+}
+
+.cancelIcon {
+	background-color: #fff;
+	border-radius: 50px;
+}
+
+.browse {
+	position: relative;
+	/* margin-right: 10px; */
+}
+
+.buttonfieldinput.btnLogout.upload-btn {
+	margin-left: 10px;
+}
+
+.browsePageBtn--down {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 10px;
+	background: #fff;
+	position: sticky;
+	top: 64px;
+	z-index: 1;
+}
+
+.browsePageBtn--down--right {
+	display: flex;
+}
